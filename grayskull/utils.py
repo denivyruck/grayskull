@@ -1,8 +1,9 @@
 import ast
 import os
+From typing import List
 from functools import lru_cache
 from glob import glob
-from typing import List
+
 
 
 @lru_cache(maxsize=10)
@@ -10,7 +11,7 @@ def get_std_modules() -> List:
     from stdlib_list import stdlib_list
 
     all_libs = set()
-    for py_ver in ("2.7", "3.6", "3.7", "3.8"):
+    for py_ver in ("2.7",  "3.6", "3.7", "3.8"):
         all_libs.update(stdlib_list(py_ver))
     return list(all_libs)
 
