@@ -1,12 +1,10 @@
 import argparse
 import logging
 import os
-
 import sys
 
 import requests
-from colorama import Style, init, Fore
-
+from colorama import Fore, Style, init
 from colorama.ansi import clear_screen
 
 import grayskull
@@ -29,18 +27,29 @@ def main(args=None):
     pypi_cmds.add_argument(
         "pypi_packages", nargs="+", help="Specify the PyPI packages name.", default=[]
     )
-    pypi_cmds.add_argument(        "--download",        "-d",        dest="download",        action="store_true",        default=False,        help="Download the sdist package and PyPI information in the same folder"
+    pypi_cmds.add_argument(
+        "--download",
+        "-d",
+        dest="download",
+        action="store_true",
+        default=False,
+        help="Download the sdist package and PyPI information in the same folder"
         " the recipe is located.",
     )
     pypi_cmds.add_argument(
-        "--maintainers",        "-m",
-        dest="maintainers",        nargs="+",
+        "--maintainers",
+        "-m",
+        dest="maintainers",
+        nargs="+",
         help="List of maintainers which will be added to the recipe.",
     )
     parser.add_argument(
         "--version",
         "-v",
-        default=False,        action="store_true",        dest="version",        help="Print Grayskull version and exit",
+        default=False,
+        action="store_true",
+        dest="version",
+        help="Print Grayskull version and exit",
     )
     parser.add_argument(
         "--heman",
