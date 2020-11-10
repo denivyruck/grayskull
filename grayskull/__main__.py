@@ -5,14 +5,6 @@ import sys
 
 import requests
 from colorama import Fore, Style, init
-
-
-
-
-
-
-
-
 from colorama.ansi import clear_screen
 
 import grayskull
