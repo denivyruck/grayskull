@@ -5,18 +5,6 @@ import sys
 
 import requests
 from colorama import Fore, Style, init
-
-
-
-
-
-
-
-
-
-
-
-
 from colorama.ansi import clear_screen
 
 import grayskull
@@ -85,7 +73,13 @@ def main(args=None):
         help="Disable or enable stdout, if it is False, Grayskull"
         " will disable the prints. Default is True",
     )
-    pypi_cmds.add_argument(        "--list-missing-deps",        default=False,        action="store_true",        dest="list_missing_deps",        help="After the execution Grayskull will print all the missing dependencies.",  )
+    pypi_cmds.add_argument(
+        "--list-missing-deps",
+        default=False,
+        action="store_true",
+        dest="list_missing_deps",
+        help="After the execution Grayskull will print all the missing dependencies.",
+    )
     pypi_cmds.add_argument(
         "--strict-conda-forge",
         default=False,
@@ -145,4 +139,3 @@ def main(args=None):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-     
