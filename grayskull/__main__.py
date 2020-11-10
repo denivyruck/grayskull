@@ -1,21 +1,16 @@
 import argparse
 import logging
-
-
 import os
 import sys
 
 import requests
-from colorama import Style, init, Fore
-
+from colorama import Fore, Style, init
 from colorama.ansi import clear_screen
 
 import grayskull
 from grayskull.base.factory import GrayskullFactory
-
 from grayskull.cli import CLIConfig
 from grayskull.cli.parser import parse_pkg_name_version
-
 from grayskull.cli.stdout import print_msg
 
 init(autoreset=True)
@@ -32,12 +27,18 @@ def main(args=None):
     pypi_cmds.add_argument(
         "pypi_packages", nargs="+", help="Specify the PyPI packages name.", default=[]
     )
-    pypi_cmds.add_argument(        "--download",        "-d",        dest="download",        action="store_true",        default=False,
+    pypi_cmds.add_argument(
+        "--download",
+        "-d",
+        dest="download",
+        action="store_true",
+        default=False,
         help="Download the sdist package and PyPI information in the same folder"
         " the recipe is located.",
     )
     pypi_cmds.add_argument(
-        "--maintainers",        "-m",
+        "--maintainers",
+        "-m",
         dest="maintainers",
         nargs="+",
         help="List of maintainers which will be added to the recipe.",
@@ -138,4 +139,3 @@ def main(args=None):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-        
